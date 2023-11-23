@@ -1,19 +1,107 @@
+.button {
+	display: block;
+	padding: 12px 51px 12px 0;
+	background-color: $accent-cl;
+	font-size: 14px;
+	font-weight: 600;
+	border-radius: 10px;
+	position: relative;
+	transition: background-color $time-hover $type-anim;
+	outline: none;
+	span {
+		padding-left: 36px;
+	}
+
+	&__icon {
+		position: absolute;
+		top: 14px;
+		right: 35px;
+		transition: fill $time-hover $type-anim;
+	}
+	@media (any-hover: hover) {
+		&:hover {
+			background-color: $hover-btn-cl;
+		}
+		&:focus {
+			.button__icon {
+				fill: #fff	;
+			}
+			color: #fff;
+			background-color: $hover-btn-cl;
+		}
+		&:disabled {
+			background-color: $disabled-cl;
+		}
+	}
+	&--big {
+		padding: 12px 55px 12px 0;
+		span {
+			padding-left: 40px;
+		}
+	}
+	&--border-big {
+		padding: 12px 70px 12px 0;
+		background-color: transparent;
+		border: 2px solid $accent-cl;
+		transition: border $time-hover $type-anim;
+		@media (any-hover: hover) {
+			&:hover {
+				background-color: transparent;
+				border: 2px solid $hover-btn-cl;
+			}
+			&:focus {
+				.button__icon {
+					fill: #fff	;
+				}
+				background-color: transparent;
+				border: 2px solid $hover-btn-cl;
+			}
+			&:disabled {
+				background-color: $disabled-cl;
+			}
+		}
+	}
+	&--border-small {
+		padding: 12px 34px;
+		background-color: transparent;
+		border: 2px solid $accent-cl;
+		transition: border $time-hover $type-anim;
+
+		span {
+			padding: 0;
+		}
+		@media (any-hover: hover) {
+			&:hover {
+				background-color: transparent;
+				border: 2px solid $hover-btn-cl;
+			}
+			&:focus {
+				background-color: transparent;
+				border: 2px solid $hover-btn-cl;
+			}
+			&:disabled {
+				background-color: $disabled-cl;
+			}
+		}
+	}
+}
+
 //====================================================================================================
 .header {
 	background-color: #84A178;
 	&__container {
 		display: flex;
 		align-items: center;
-		@media (max-width: 768px) {
+		@media (max-width: $mobile) {
 			justify-content: flex-end;
 		}
 	}
 
 	&__logo {
-		@media (min-width: 768px) {
+		@media (min-width: $mobile) {
 			@include adaptiveValue("margin-right", 308, 0);
 		}
-		@media (max-width: 768px) {
+		@media (max-width: $mobile) {
 			margin-right: auto;
 		}
 	}
@@ -35,42 +123,73 @@
 		display: flex;
 		align-items: center;
 		padding-right: 15px;
-		@media (min-width: 768px) {
+		@media (min-width: $mobile) {
 			@include adaptiveValue("gap", 28, 0);
 		}
-		@media (max-width: 768px) {
-			display: none;
+		@media (max-width: $mobile) {
+			flex-direction: column;
+			gap: 40px;
 		}
 		@include adaptiveValue("padding-top", 32, 28);
 		@include adaptiveValue("padding-bottom", 13, 11);
 	}
 
 	&__item {
-		position: relative;
-		&::before {
-			content: '';
-			position: absolute;
-			bottom: 0;
-			left: 0;
-
-		}
 	}
 
 	&__link {
 		color: #FCFCFC;
-		@media (min-width: 768px) {
+		position: relative;
+		overflow: hidden;
+		@media (min-width: $mobile) {
 			@include adaptiveValue("font-size", 16, 10);
 		}
 		font-weight: 700;
 		transition: color $time-hover $type-anim;
 		@include adaptiveValue("padding-top", 32, 28);
 		@include adaptiveValue("padding-bottom", 13, 11);
+		@media (min-width: $mobile) {
+			&::before {
+				content: '';
+				position: absolute;
+				bottom: 11px;
+				left: 0;
+				height: 1px;
+				width: 100%;
+				background-color: $accent-cl;
+				transform: scaleX(0);
+				opacity: 0;
+				visibility: hidden;
+				transition: transform $time-anim $type-anim, opacity $time-anim $type-anim, opacity $time-anim $type-anim;
+			}
+		}
+		
 		@media (any-hover: hover) {
 			&:hover {
 				color: $accent-cl;
+				&::before,
+				&::after {
+					transform: scaleX(1);
+					opacity: 1;
+					visibility: visible;
+				}
 			}
 			&:focus {
-				
+				color: $accent-cl;
+			}
+
+			@media (max-width: $mobile) {
+				font-size: 48px;
+				&:hover {
+					color: $hover-dark-cl;
+				}
+				&:focus {
+					color: $hover-dark-cl;
+				}
+			}
+
+			@media (max-width: $mobileSmall) {
+				font-size: 34px;
 			}
 		}
 	}
@@ -78,13 +197,17 @@
 .icon-menu {
 	margin-left: auto;
 }
-.button {
-	@media (min-width: 768px) {
+.action-button {
+	@media (max-width: $mobileSmall) {
+		display: none;
+	}
+	@media (min-width: $mobile) {
 		margin-left: auto;
 	}
-	@media (max-width: 768px) {
+	@media (max-width: $mobile) {
 		margin-left: 32px;
 	}
+	
 	&__icon {
 	}
 }
@@ -92,6 +215,19 @@
 //====================================================================================================
 
 //Burger
+@media (max-width: $mobile) {
+	.menu__body {
+		position: fixed;
+		top: 65px;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		transform: translateX(-100%);
+		background-color: #84A178;
+		overflow: auto;
+		transition: transform $time-anim $type-anim;
+	}
+}
 
 .icon-menu {
 	display: none;
@@ -125,6 +261,9 @@
 			top: calc(50% - toRem(1));
 		}
 		.menu-open & {
+			+.menu__body {
+				transform: translateX(0);
+			}
 			span {
 				width: 0;
 			}
