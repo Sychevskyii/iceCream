@@ -3,12 +3,17 @@
 
 .button {
 	display: inline-flex;
-	padding: 0px 0px;
+	padding: 12px 51px 12px 0;
+	background-color: $accent-cl;
+	font-size: 14px;
+	font-weight: 600;
+	border-radius: 10px;
+	position: relative;
+	span {
+		padding-left: 36px;
+	}
 	@media (any-hover: hover) {
 		&:hover {
 		}
-	}
-	&--fw {
-		width: 100%;
 	}
 }
