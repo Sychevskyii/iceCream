@@ -1,4 +1,65 @@
 //====================================================================================================
+.header {
+	background-color: #84A178;
+	&__container {
+		display: flex;
+		align-items: center;
+	}
+
+	&__logo {
+		@include adaptiveValue("margin-right", 308, 80);
+	}
+
+	&__menu {
+	}
+}
+.menu {
+	display: flex;
+	align-items: center;
+	&__icon {
+	}
+
+	&__body {
+	}
+
+	&__list {
+		display: flex;
+		align-items: center;
+		@include adaptiveValue("gap", 28, 20);
+	}
+
+	&__item {
+		position: relative;
+		&::before {
+			content: '';
+		}
+	}
+
+	&__link {
+		color: #FCFCFC;
+		font-family: Montserrat;
+		font-size: 16px;
+		font-weight: 700;
+		transition: color $time-hover $type-anim;
+		@include adaptiveValue("padding-top", 32, 28);
+		@include adaptiveValue("padding-bottom", 13, 11);
+		@media (any-hover: hover) {
+			&:hover {
+				color: $accent-cl;
+			}
+			&:focus {
+				
+			}
+		}
+	}
+}
+.icon-menu {
+}
+.button {
+	margin-left: auto;
+	&__icon {
+	}
+}
 
 //====================================================================================================
 
