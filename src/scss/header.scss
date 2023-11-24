@@ -218,6 +218,7 @@
 @media (max-width: $mobile) {
 	.menu__body {
 		position: fixed;
+		z-index: 50;
 		top: 65px;
 		left: 0;
 		width: 100%;
