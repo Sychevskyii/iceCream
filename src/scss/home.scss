@@ -8,12 +8,14 @@
     background-repeat: no-repeat;
     background-position: center bottom;
     background-size: 1200px;
-    @include adaptiveValue("padding-top", 40, 20);
-    @include adaptiveValue("padding-bottom", 103, 50);
+    padding-top: 40px;
+    padding-bottom: 103px;
 
     @media (max-width: $mobile) {
 		background-image: url(../img/hero/dots-bg-tb.png);
-        background-size: 768px;
+        background-size: 100%;
+        padding-top: 15px;
+        padding-bottom: 24px;
 	}
     &__container {
         position: relative;
@@ -22,10 +24,13 @@
 .block-wrapper {
     display: flex;
     justify-content: space-between;
-    @include adaptiveValue("margin-bottom", 111, 60);
+    
+    @media (max-width: $mobile) {
+		margin-bottom: 46px;
+	}
 }
 .hero-block {
-    @include adaptiveValue("width", 367, 200);
+    width: 367px;
     &__title {
         color: #FCFCFC;
         font-family: Seymour One;
@@ -35,6 +40,14 @@
         letter-spacing: 1.52px;
         text-transform: uppercase;
         @include adaptiveValue("margin-bottom", 28, 15);
+        @media (max-width: $mobile) {
+            width: 257px;
+            font-size: 26px;
+            line-height: 1.2;
+            span {
+                font-size: 38px;
+            }
+        }
     }
 
     &__action {
@@ -54,6 +67,10 @@
         &:focus {
             color: #fff;
         }
+
+        @media (max-width: $mobile) {
+            font-size: 16px;
+         }
     }
 }
 .button {
@@ -69,7 +86,12 @@
         font-size: 46px;
         font-weight: 900;
         letter-spacing: 1.84px;
-        @include adaptiveValue("margin-bottom", 14, 7);
+        margin-bottom: 14px;
+
+        @media (max-width: $mobile) {
+            font-size: 28px;
+            margin-bottom: 8px;
+         }
     }
 
     &__name {
@@ -79,16 +101,29 @@
         &:last-child {
             margin-bottom: 0;
         }
+
+        @media (max-width: $mobile) {
+            font-size: 8px;
+         }
     }
 }
 .hero-info-block {
-    @include adaptiveValue("width", 215, 100);
-    @include adaptiveValue("margin-left", 242, 0);
+    margin-top: 122px;
+    width: 200px;
+    margin-left: 242px;
+    @media (max-width: $mobile) {
+        width: 175px;
+        margin-left: 216px;
+     }
     &__text {
-        @include adaptiveValue("margin-bottom", 24, 12);
+        margin-bottom: 24px;
         color: #fff;
         font-weight: 400;
         line-height: 1.4;
+        @media (max-width: $mobile) {
+            font-size: 12px;
+            margin-bottom: 29px;
+         }
     }
 
     &__icon {
@@ -103,14 +138,17 @@
         bottom: -38px;
         left: 16px;
         @media (max-width: $mobile) {
+        bottom: -10px;
            width: 152px;
         }
     }
 
     &__img--right {
-        bottom: -103px;
+        bottom: -102px;
         right: 95px;
         @media (max-width: $mobile) {
+            bottom: -24px;
+            right: 90px;
             width: 268px;
          }
     }
