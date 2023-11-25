@@ -110,18 +110,11 @@
 			margin-right: auto;
 		}
 	}
-
-	&__menu {
-	}
 }
 .menu {
 	display: flex;
 	align-items: center;
 	&__icon {
-	}
-
-	&__body {
-		
 	}
 
 	&__list {
@@ -139,13 +132,11 @@
 		@include adaptiveValue("padding-bottom", 13, 11);
 	}
 
-	&__item {
-	}
-
 	&__link {
 		color: #FCFCFC;
 		position: relative;
 		overflow: hidden;
+		@include adaptiveValue("font-size", 16, 11);
 		@media (max-width: $mobile) {
 			font-size: 32px;
 		}
@@ -211,9 +202,6 @@
 	}
 	@media (max-width: $mobile) {
 		margin-left: 32px;
-	}
-	
-	&__icon {
 	}
 }
 

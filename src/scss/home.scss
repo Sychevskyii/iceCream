@@ -9,8 +9,8 @@
     background-position: center bottom;
     background-size: 1200px;
     padding-top: 40px;
-    padding-bottom: 103px;   
-    @media (max-width: $mobile) {
+    @include adaptiveValue("padding-bottom", 103, 0);
+    @media (max-width: 769px) {
 		background-image: url(../img/hero/dots-bg-tb.png);
         background-size: 100%;
         padding-top: 15px;
@@ -93,10 +93,7 @@
          }
     }
 }
-.button {
-}
-.button--border-small {
-}
+
 .count-block {
     display: flex;
     flex-direction: column;
@@ -123,7 +120,7 @@
         }
 
         @media (max-width: $mobile) {
-            font-size: 8px;
+            font-size: 6px;
          }
     }
 }
@@ -176,6 +173,12 @@
         @media (max-width: 735px) {
             display: none;
             }
+            @media (max-width: 769px) {
+                left: 10px;
+            }
+            @media (max-width: 912.98px) {
+                bottom: -50px;
+            }
         @media (max-width: $mobile) {
             bottom: -10px;
             @include adaptiveValue("width", 225, 152);
@@ -189,6 +192,14 @@
     &__img--right {
         bottom: -102px;
         right: 95px;
+        @media (max-width: 912.98px) {
+            bottom: -70px;
+            right: 50px;
+        }
+        @media (max-width: 769px) {
+            bottom: -24px;
+            right: 59px;
+        }
         @media (max-width: $mobile) {
             bottom: -24px;
             right: 31px;
@@ -199,15 +210,51 @@
          @media (max-width: 420px) {
             display: none;
          } 
+         
         @media (max-width: $tablet) {
             @include adaptiveValue("width", 456, 268);
             }
+            
             @media (max-width: 735px) {
                 right: 20px;
                 width: 218px;
                 }   
     }
 }
+//====================================================================================================
+// Products section
+//====================================================================================================
 
+.products {
+    background-image: url(../img/products/products-bg.png);
+    background-position: center;
+    background-size: 1200px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    &__container {
+    }
 
+    &__label {
+    }
+
+    &__title {
+    }
+
+    &__card {
+    }
+}
+.card {
+
+    &__img {
+    }
+
+    &__title {
+    }
+
+    &__text {
+    }
+
+    &__icon {
+    }
+}
 
