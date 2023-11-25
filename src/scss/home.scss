@@ -9,14 +9,19 @@
     background-position: center bottom;
     background-size: 1200px;
     padding-top: 40px;
-    padding-bottom: 103px;
-
+    padding-bottom: 103px;   
     @media (max-width: $mobile) {
 		background-image: url(../img/hero/dots-bg-tb.png);
         background-size: 100%;
         padding-top: 15px;
         padding-bottom: 24px;
 	}
+    @media (max-width: 735px) {
+        background-image: url(../img/hero/dots-bg-mb.png);
+        background-position: right bottom;
+        background-size: 330px;
+        }
+    
     &__container {
         position: relative;
     }
@@ -31,6 +36,12 @@
 }
 .hero-block {
     width: 367px;
+    @media (max-width: $mobileSmall) {
+        padding-bottom: 150px;
+     } 
+     @media (max-width: 420px) {
+        padding-bottom: 70px;
+     } 
     &__title {
         color: #FCFCFC;
         font-family: Seymour One;
@@ -46,6 +57,9 @@
             line-height: 1.2;
             span {
                 font-size: 38px;
+                @media (max-width: 420px) {
+                    @include adaptiveValue("font-size", 38, 28);
+                 }
             }
         }
     }
@@ -53,7 +67,13 @@
     &__action {
         display: flex;
         align-items: center;
-        @include adaptiveValue("gap", 34, 15);
+        gap: 34px;
+
+        @media (max-width: 380px) {
+            flex-direction: column;
+            align-items: start;
+            gap: 20px;
+         }
     }
 
     &__link {
@@ -108,13 +128,20 @@
     }
 }
 .hero-info-block {
-    margin-top: 122px;
     width: 200px;
-    margin-left: 242px;
+    @include adaptiveValue("margin-top", 122, 60);
+    @include adaptiveValue("margin-left", 242, 100);
+    padding-left: 10px;
+    @media (max-width: $mobileSmall) {
+        display: none;
+     }
     @media (max-width: $mobile) {
         width: 175px;
         margin-left: 216px;
      }
+     @media (max-width: 735px) {
+        margin-left: 0;
+        }
     &__text {
         margin-bottom: 24px;
         color: #fff;
@@ -126,8 +153,17 @@
          }
     }
 
+    &__link {
+        &:hover {
+            .hero-info-block__icon {
+                fill: $accent-cl;
+            }
+        }
+    }
+
     &__icon {
         fill: #fff;
+        transition: fill $time-anim $type-anim;
     }
 
     &__img {
@@ -137,9 +173,16 @@
     &__img--left {
         bottom: -38px;
         left: 16px;
+        @media (max-width: 735px) {
+            display: none;
+            }
         @media (max-width: $mobile) {
+            bottom: -10px;
+            @include adaptiveValue("width", 225, 152);
+            }
+        @media (max-width: $tablet) {
         bottom: -10px;
-           width: 152px;
+        @include adaptiveValue("width", 225, 152);
         }
     }
 
@@ -148,9 +191,21 @@
         right: 95px;
         @media (max-width: $mobile) {
             bottom: -24px;
-            right: 90px;
-            width: 268px;
-         }
+            right: 31px;
+        }
+        @media (max-width: $mobileSmall) {
+            bottom: -71px;
+         } 
+         @media (max-width: 420px) {
+            display: none;
+         } 
+        @media (max-width: $tablet) {
+            @include adaptiveValue("width", 456, 268);
+            }
+            @media (max-width: 735px) {
+                right: 20px;
+                width: 218px;
+                }   
     }
 }
 

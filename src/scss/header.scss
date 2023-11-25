@@ -146,8 +146,8 @@
 		color: #FCFCFC;
 		position: relative;
 		overflow: hidden;
-		@media (min-width: $mobile) {
-			@include adaptiveValue("font-size", 16, 10);
+		@media (max-width: $mobile) {
+			font-size: 32px;
 		}
 		font-weight: 700;
 		transition: color $time-hover $type-anim;
