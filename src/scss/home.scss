@@ -414,7 +414,10 @@
 
 .made {
     background-color: #84A178;
+    padding-top: 67px;
+    padding-bottom: 168px;
     &__container {
+        position: relative;
     }
 
     &__label {
@@ -428,20 +431,48 @@
 
     &__title {
         text-align: center;
+        color: #FCFCFC;
+        font-family: Seymour One;
+        font-size: 36px;
+        font-weight: 400;
+        letter-spacing: 2.16px;
+        text-transform: uppercase;
+        margin-bottom: 82px;
     }
 }
 .made-block {
-
+    display: flex;
+    gap: 109px;
+    margin-bottom: 60px;
     &__wrapper-img {
+        background: linear-gradient(0deg, rgba(248, 210, 78, 0.70) 0%, rgba(248, 210, 78, 0.70) 100%), #D9D9D9;
+        box-shadow: 0px 8px 30px 0px rgba(153, 114, 23, 0.25);
+        border-radius: 50%;
+        padding-top: 39px;
     }
 
     &__img {
     }
 
     &__info {
+        width: 463px;
+        margin-top: 90px;
     }
 
     &__text {
+        color: #FCFCFC;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 1.7; 
+        letter-spacing: 0.64px;
+        margin-bottom: 8px;
+        &:last-of-type {
+            margin-bottom: 54px; 
+        }
+
+        &--big {
+            font-size: 16px;
+        }
     }
 
     &__btn {
@@ -453,21 +484,51 @@
 .button {
 }
 .made-block-count {
-
+    display: flex;
+    justify-content: space-between;
     &__item {
+        width: 368px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     &__icon-bg {
+        background-color: $accent-cl;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 60px;
     }
 
     &__icon {
     }
 
     &__number {
+        color: #FCFCFC;
+        font-size: 58px;
+        font-weight: 700;
+        letter-spacing: 2.32px;
+        text-transform: uppercase;
+        margin-bottom: 25px;
     }
 
     &__text {
+        color: #FCFCFC;
+        text-align: center;
+        font-size: 16px;;
+        font-weight: 400;
+        line-height: 1.7; 
+        letter-spacing: 0.32px;
     }
 }
 .section-img {
+    border-radius: 24px;
+    position: absolute;
+    bottom: -500px;
+    left: 93px;
 }
+
