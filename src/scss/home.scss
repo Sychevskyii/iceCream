@@ -416,6 +416,10 @@
     background-color: #84A178;
     padding-top: 67px;
     padding-bottom: 168px;
+    @media (max-width: $tablet) {
+        padding-top: 60px;
+        padding-bottom: 204px;
+    }
     &__container {
         position: relative;
     }
@@ -427,6 +431,16 @@
         font-weight: 800;
         letter-spacing: 1.2px;
         text-transform: uppercase;
+        margin-bottom: 20px;
+
+        @media (max-width: $tablet) {
+            font-size: 22px;
+            margin-bottom: 18px;
+        }
+        @media (max-width: $mobile) {
+            font-size: 18px;
+            margin-bottom: 14px;
+        }
     }
 
     &__title {
@@ -438,25 +452,62 @@
         letter-spacing: 2.16px;
         text-transform: uppercase;
         margin-bottom: 82px;
+        @media (max-width: $tablet) {
+            font-size: 34px;
+            margin-bottom: 72px;
+        }
+        @media (max-width: $mobile) {
+            font-size: 30px;
+            margin-bottom: 32px;
+            width: 200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
     }
 }
 .made-block {
     display: flex;
     gap: 109px;
+    @media (max-width: $tablet) {
+        gap: 38px;
+    }
+    @media (max-width: $mobile) {
+        flex-direction: column;
+        align-items: center;
+    }
     margin-bottom: 60px;
     &__wrapper-img {
         background: linear-gradient(0deg, rgba(248, 210, 78, 0.70) 0%, rgba(248, 210, 78, 0.70) 100%), #D9D9D9;
         box-shadow: 0px 8px 30px 0px rgba(153, 114, 23, 0.25);
         border-radius: 50%;
         padding-top: 39px;
+        height: 490px;
+        @media (max-width: $tablet) {
+            height: 330px;
+            padding-top: 26px;
+        }
+        @media (max-width: $mobile) {
+            height: 278px;
+            padding-top: 22px;
+        }
     }
 
     &__img {
+        @media (max-width: $tablet) {
+            width: 330px;
+        }
+        @media (max-width: $mobile) {
+            width: 278px;
+        }
     }
 
     &__info {
         width: 463px;
         margin-top: 90px;
+        @media (max-width: $tablet) {
+            margin-top: 8px;
+            width: 334px;
+        }
     }
 
     &__text {
@@ -467,15 +518,35 @@
         letter-spacing: 0.64px;
         margin-bottom: 8px;
         &:last-of-type {
-            margin-bottom: 54px; 
+            margin-bottom: 54px;
+            @media (max-width: $mobile) {
+                margin-bottom: 24px;
+            } 
         }
 
         &--big {
             font-size: 16px;
+            @media (max-width: $tablet) {
+                font-size: 12px;
+            }
+        }
+
+        @media (max-width: $tablet) {
+            font-size: 12px;
+        }
+        @media (max-width: $mobile) {
+            width: 220px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
         }
     }
 
     &__btn {
+        padding-right: 34px;
+        @media (max-width: $mobile) {
+            margin: 0 auto;
+        }
     }
 
     &__icon-btn {
@@ -486,11 +557,19 @@
 .made-block-count {
     display: flex;
     justify-content: space-between;
+    @media (max-width: $mobile) {
+        flex-direction: column;
+        align-items: center;
+        column-gap: 32px;
+    }
     &__item {
         width: 368px;
         display: flex;
         flex-direction: column;
         align-items: center;
+        @media (max-width: $tablet) {
+            width: 152px;
+        }
     }
 
     &__icon-bg {
@@ -502,6 +581,9 @@
         justify-content: center;
         align-items: center;
         margin-bottom: 60px;
+        @media (max-width: $tablet) {
+            margin-bottom: 26px;
+        }
     }
 
     &__icon {
@@ -514,6 +596,10 @@
         letter-spacing: 2.32px;
         text-transform: uppercase;
         margin-bottom: 25px;
+        @media (max-width: $tablet) {
+            font-size: 48px;
+            margin-bottom: 19px;
+        }
     }
 
     &__text {
@@ -530,5 +616,10 @@
     position: absolute;
     bottom: -500px;
     left: 93px;
+    @media (max-width: $mobile) {
+        width: 704px;
+        bottom: -350px;
+        left: 30px;
+    }
 }
 
