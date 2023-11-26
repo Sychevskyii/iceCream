@@ -1,4 +1,6 @@
-
+* {
+    cursor: url(../img/icons/cursor.svg), pointer;
+}
 //====================================================================================================
 // Hero section
 //====================================================================================================
@@ -420,6 +422,9 @@
         padding-top: 60px;
         padding-bottom: 204px;
     }
+    @media (max-width: $mobileSmall) {
+        padding-bottom: 81px;
+    }
     &__container {
         position: relative;
     }
@@ -456,7 +461,7 @@
             font-size: 34px;
             margin-bottom: 72px;
         }
-        @media (max-width: $mobile) {
+        @media (max-width: $mobileSmall) {
             font-size: 30px;
             margin-bottom: 32px;
             width: 200px;
@@ -471,7 +476,7 @@
     @media (max-width: $tablet) {
         gap: 38px;
     }
-    @media (max-width: $mobile) {
+    @media (max-width: $mobileSmall) {
         flex-direction: column;
         align-items: center;
     }
@@ -486,7 +491,7 @@
             height: 330px;
             padding-top: 26px;
         }
-        @media (max-width: $mobile) {
+        @media (max-width: $mobileSmall) {
             height: 278px;
             padding-top: 22px;
         }
@@ -496,7 +501,7 @@
         @media (max-width: $tablet) {
             width: 330px;
         }
-        @media (max-width: $mobile) {
+        @media (max-width: $mobileSmall) {
             width: 278px;
         }
     }
@@ -519,7 +524,7 @@
         margin-bottom: 8px;
         &:last-of-type {
             margin-bottom: 54px;
-            @media (max-width: $mobile) {
+            @media (max-width: $mobileSmall) {
                 margin-bottom: 24px;
             } 
         }
@@ -534,7 +539,7 @@
         @media (max-width: $tablet) {
             font-size: 12px;
         }
-        @media (max-width: $mobile) {
+        @media (max-width: $mobileSmall) {
             width: 220px;
             margin-left: auto;
             margin-right: auto;
@@ -544,7 +549,7 @@
 
     &__btn {
         padding-right: 34px;
-        @media (max-width: $mobile) {
+        @media (max-width: $mobileSmall) {
             margin: 0 auto;
         }
     }
@@ -557,10 +562,9 @@
 .made-block-count {
     display: flex;
     justify-content: space-between;
-    @media (max-width: $mobile) {
+    @media (max-width: $mobileSmall) {
         flex-direction: column;
         align-items: center;
-        column-gap: 32px;
     }
     &__item {
         width: 368px;
@@ -569,6 +573,13 @@
         align-items: center;
         @media (max-width: $tablet) {
             width: 152px;
+        }
+        @media (max-width: $mobileSmall) {
+            width: 230px;
+            @include adaptiveValue("margin-bottom", 39, 20);
+            &:last-child {
+                margin-bottom: 0;
+            }
         }
     }
 
@@ -583,6 +594,9 @@
         margin-bottom: 60px;
         @media (max-width: $tablet) {
             margin-bottom: 26px;
+        }
+        @media (max-width: $mobileSmall) {
+            margin-bottom: 16px;
         }
     }
 
@@ -600,15 +614,26 @@
             font-size: 48px;
             margin-bottom: 19px;
         }
+        @media (max-width: $mobileSmall) {
+            font-size: 36px;
+            margin-bottom: 28px;
+        }
     }
 
     &__text {
         color: #FCFCFC;
         text-align: center;
-        font-size: 16px;;
+        font-size: 16px;
         font-weight: 400;
         line-height: 1.7; 
         letter-spacing: 0.32px;
+        @media (max-width: $tablet) {
+            font-size: 14px;;
+        }
+        @media (max-width: $mobileSmall) {
+            width: 100%;
+            font-size: 12px;
+        }
     }
 }
 .section-img {
@@ -620,6 +645,16 @@
         width: 704px;
         bottom: -350px;
         left: 30px;
+    }
+    @media (max-width: $mobileSmall) {
+        width: 440px;
+        bottom: -220px;
+        left: 12px;
+    }
+    @media (max-width: 320px) {
+        width: 290px;
+        bottom: -150px;
+        left: 15px;
     }
 }
 
