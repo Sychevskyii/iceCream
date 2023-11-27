@@ -553,11 +553,6 @@
             margin: 0 auto;
         }
     }
-
-    &__icon-btn {
-    }
-}
-.button {
 }
 .made-block-count {
     display: flex;
@@ -598,9 +593,6 @@
         @media (max-width: $mobileSmall) {
             margin-bottom: 16px;
         }
-    }
-
-    &__icon {
     }
 
     &__number {
@@ -658,3 +650,98 @@
     }
 }
 
+//====================================================================================================
+// Responses section
+//====================================================================================================
+.responses {
+    background-image: url(../img/products/products-bg.png);
+    background-position: center;
+    background-size: 1200px;
+    padding-top: 452px;
+    padding-bottom: 228px;
+    @media (max-width: $mobile) {
+        background-image: url(../img/products/products-bg-tb.png);
+        background-size: 768px;
+        padding-top: 283px;
+        padding-bottom: 379px;
+     }
+     @media (max-width: $mobileSmall) {
+        background-image: url(../img/products/products-bg-mb.png);
+        background-size: 480px;
+     }
+    &__container {
+    }
+
+    &__slider {
+    }
+
+    &__wrapper {
+    }
+
+    &__slide {
+    }
+}
+.swiper {
+}
+.swiper-wrapper {
+}
+.swiper-slide {
+    text-align: center;
+    &__img {
+        border-radius: 50%;
+        margin-bottom: 32px;
+    }
+
+    &__text {
+        padding: 43px 109px;
+        background-color: #84A178;
+        border-radius: 24px;
+        width: 968px;
+        margin: 0 auto 32px auto;
+        color: #FCFCFC;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 1.8; 
+        letter-spacing: 0.64px;
+        @media (max-width: $mobile) {
+            width: 705px;
+            padding: 28px 80px;
+            font-size: 14px;
+         }
+    }
+
+    &__name {
+        color: $hover-dark-cl;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 1.8;
+        margin-bottom: 32px;
+    }
+}
+.swiper-pagination {
+    width: 72px;
+    height: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+
+.swiper-pagination-bullet {
+    display: block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #D9D9D9;
+    transition: background-color $time-anim $type-anim;
+}
+
+.swiper-pagination-bullet-active {
+    background-color: #84A178;
+}
+.swiper-button-prev {
+}
+.swiper-button-next {
+}
+.swiper-scrollbar {
+}
