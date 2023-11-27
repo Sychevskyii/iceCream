@@ -363,6 +363,8 @@
         letter-spacing: 1.2px;
         text-transform: uppercase;
         margin-bottom: 73px;
+        margin-left: auto;
+        margin-right: auto;
         @media (max-width: $mobile) {
             font-size: 22px;
             padding-top: 108px;
@@ -747,48 +749,132 @@
 //====================================================================================================
 .location {
     background-color: #84A178;
+    padding-top: 474px;
+    padding-bottom: 120px;
     &__container {
+        position: relative;
     }
 }
 .card-list {
+    display: flex;
+    gap: 32px;
+    position: absolute;
+    left: 0;
+    bottom: 128px;
 }
 .card {
-
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     &__label {
         padding: 4px 14px;
         background-color: $accent-cl;
+        display: inline-block;
+        color: $hover-dark-cl;
+        text-align: left;
+        text-transform: uppercase;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 1.4;
+        letter-spacing: 0.64px;
+        margin-bottom: 36px;
     }
 
     &--white {
         background-color: #fff;
+        padding: 40px; 
     }
 }
 
 .card-info-list {
-
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 64px;
     &__item {
     }
 }
 .card-item {
 
     &__location {
+        text-align: left;
+        color: $hover-dark-cl;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 1.8; 
+        letter-spacing: 0.64px;
+        margin-bottom: 8px;
     }
 
     &__link {
-    }
-
-    &__item {
+        text-align: left;
+        display: block;
+        color: #D6936D;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 1.8;
+        letter-spacing: 0.64px;
+        &:hover {
+            text-decoration: underline;
+        }
     }
 
     &__schedule {
+        text-align: left;
+        color: $hover-dark-cl;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 1.8;
+        letter-spacing: 0.64px;
     }
 
     &__schedule-time {
+        text-align: left;
+        display: block;
+        color: #ABABAB;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 1.8;
     }
 
     &__tel {
+        text-align: left;
+        display: block;
+        color: $hover-dark-cl;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 1.5;
+        margin-bottom: 4px;
     }
 
     &__mail {
+        text-align: left;
+        display: block;
+        color: $hover-dark-cl;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 1.5;
     }
 }
+
+.location-action {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 60px;
+    &__button {
+        padding-right: 50px;
+
+        span {
+            margin-right: 4px;
+        }
+    }
+}
+.button--border-big {
+    padding-right: 61px;
+    margin-right: 25px;
+    span {
+        padding-left: 53px;
+    }
+}
+

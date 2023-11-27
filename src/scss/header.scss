@@ -1,5 +1,6 @@
 .button {
-	display: block;
+	display: flex;
+	justify-content: center;
 	cursor: url(../img/icons/cursor.svg), pointer;
 	padding: 12px 51px 12px 0;
 	background-color: $accent-cl;
@@ -10,7 +11,7 @@
 	transition: background-color $time-hover $type-anim;
 	outline: none;
 	span {
-		padding-left: 36px;
+		padding-left: 40px;
 	}
 
 	&__icon {
@@ -45,13 +46,17 @@
 		background-color: transparent;
 		border: 2px solid $accent-cl;
 		transition: border $time-hover $type-anim;
+		.button__icon {
+			top: 13px;
+			right: 47px;
+		}
 		@media (any-hover: hover) {
 			&:hover {
 				background-color: transparent;
 				border: 2px solid $hover-btn-cl;
 			}
 			&:focus {
-				.button__icon {
+				&__icon {
 					fill: #fff	;
 				}
 				background-color: transparent;
