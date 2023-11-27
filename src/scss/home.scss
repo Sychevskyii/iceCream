@@ -279,12 +279,9 @@
 
 }
 
-.cards-wrapper {
+.cards-list {
     display: flex;
     gap: 30px;
-    @media (max-width: $mobile) {
-        gap: 16px;
-     }
      @media (max-width: $mobileSmall) {
         flex-direction: column;
         align-items: center;
@@ -301,6 +298,7 @@
     background-color: #AEC6A5;
     @media (max-width: $mobile) {
         height: 428px;
+        width: 224px;
      }
 
      @media (max-width: 370px) {
@@ -668,28 +666,23 @@
      @media (max-width: $mobileSmall) {
         background-image: url(../img/products/products-bg-mb.png);
         background-size: 480px;
+        padding-top: 235px;
+        padding-bottom: 409px;
      }
-    &__container {
-    }
-
-    &__slider {
-    }
-
-    &__wrapper {
-    }
-
-    &__slide {
-    }
-}
-.swiper {
-}
-.swiper-wrapper {
+     @media (max-width: 320px) {
+        padding-top: 170px;
+        padding-bottom: 350px;
+     }
 }
 .swiper-slide {
     text-align: center;
     &__img {
         border-radius: 50%;
         margin-bottom: 32px;
+        @media (max-width: $mobileSmall) {
+            width: 85px;
+            height: 85px;
+         }
     }
 
     &__text {
@@ -708,6 +701,13 @@
             padding: 28px 80px;
             font-size: 14px;
          }
+         @media (max-width: $mobileSmall) {
+            width: 85px;
+            height: 85px;
+            padding: 35px 39px;
+            width: 280px;
+            height: 256px;
+         }
     }
 
     &__name {
@@ -716,6 +716,9 @@
         font-weight: 500;
         line-height: 1.8;
         margin-bottom: 32px;
+        @media (max-width: $mobileSmall) {
+            margin-bottom: 12px;
+         }
     }
 }
 .swiper-pagination {
@@ -739,9 +742,53 @@
 .swiper-pagination-bullet-active {
     background-color: #84A178;
 }
-.swiper-button-prev {
+//====================================================================================================
+// Responses section
+//====================================================================================================
+.location {
+    background-color: #84A178;
+    &__container {
+    }
 }
-.swiper-button-next {
+.card-list {
 }
-.swiper-scrollbar {
+.card {
+
+    &__label {
+        padding: 4px 14px;
+        background-color: $accent-cl;
+    }
+
+    &--white {
+        background-color: #fff;
+    }
+}
+
+.card-info-list {
+
+    &__item {
+    }
+}
+.card-item {
+
+    &__location {
+    }
+
+    &__link {
+    }
+
+    &__item {
+    }
+
+    &__schedule {
+    }
+
+    &__schedule-time {
+    }
+
+    &__tel {
+    }
+
+    &__mail {
+    }
 }
