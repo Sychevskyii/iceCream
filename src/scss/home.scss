@@ -745,12 +745,23 @@
     background-color: #84A178;
 }
 //====================================================================================================
-// Responses section
+// Location section
 //====================================================================================================
 .location {
     background-color: #84A178;
     padding-top: 474px;
     padding-bottom: 120px;
+    @media (max-width: $mobile) {
+        padding-top: 278px;
+        padding-bottom: 40px;
+     }
+     @media (max-width: $mobileSmall) {
+        padding-top: 943px;
+        padding-bottom: 60px;
+     }
+     @media (max-width: 320px) {
+        padding-bottom: 40px;
+     }
     &__container {
         position: relative;
     }
@@ -759,8 +770,21 @@
     display: flex;
     gap: 32px;
     position: absolute;
-    left: 0;
+    left: 15px;
     bottom: 128px;
+    @media (max-width: $mobile) {
+        bottom: 90px;
+     }
+     @media (max-width: $mobileSmall) {
+        flex-direction: column;
+        left: 100px;
+        bottom: 128px;
+        gap: 16px;
+     }
+     @media (max-width: 320px) {
+        left: 20px;
+        bottom: 105px;
+     }
 }
 .card {
     display: flex;
@@ -773,16 +797,39 @@
         color: $hover-dark-cl;
         text-align: left;
         text-transform: uppercase;
-        font-size: 16px;
+        
         font-weight: 500;
         line-height: 1.4;
         letter-spacing: 0.64px;
         margin-bottom: 36px;
+
+        @media (max-width: $mobile) {
+            padding: 4px 10px;
+            margin-bottom: 32px;
+         }
+         @media (max-width: $mobileSmall) {
+            font-size: 12px;
+            padding: 4px 22px;
+            margin-bottom: 24px;
+         }
     }
 
     &--white {
         background-color: #fff;
         padding: 40px; 
+        @media (max-width: $mobile) {
+            padding: 40px 24px;
+            height: 537px;
+         }
+         @media (max-width: $mobileSmall) {
+            width: 280px;
+            height: 412px;
+            padding: 40px 32px;
+         }
+
+         @media (max-width: 320px) {
+            padding: 28px;
+         }
     }
 }
 
@@ -791,8 +838,10 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 64px;
-    &__item {
-    }
+
+    @media (max-width: $mobileSmall) {
+        gap: 48px;
+     }
 }
 .card-item {
 
@@ -804,6 +853,13 @@
         line-height: 1.8; 
         letter-spacing: 0.64px;
         margin-bottom: 8px;
+        @media (max-width: $mobile) {
+            margin-bottom: 12px;
+            font-size: 14px;
+         }
+         @media (max-width: $mobileSmall) {
+            font-size: 12px;
+         }
     }
 
     &__link {
@@ -817,6 +873,14 @@
         &:hover {
             text-decoration: underline;
         }
+
+        @media (max-width: $mobile) {
+            font-size: 14px;
+         }
+
+         @media (max-width: $mobileSmall) {
+            font-size: 12px;
+         }
     }
 
     &__schedule {
@@ -826,6 +890,12 @@
         font-weight: 500;
         line-height: 1.8;
         letter-spacing: 0.64px;
+        @media (max-width: $mobile) {
+            font-size: 14px;
+         }
+         @media (max-width: $mobileSmall) {
+            font-size: 12px;
+         }
     }
 
     &__schedule-time {
@@ -835,6 +905,17 @@
         font-size: 16px;
         font-weight: 500;
         line-height: 1.8;
+        @media (max-width: $mobile) {
+            font-size: 14px;
+            margin-bottom: 8px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+         }
+         @media (max-width: $mobileSmall) {
+            font-size: 12px;
+         }
     }
 
     &__tel {
@@ -845,6 +926,12 @@
         font-weight: 500;
         line-height: 1.5;
         margin-bottom: 4px;
+        @media (max-width: $mobile) {
+            font-size: 14px;
+         }
+         @media (max-width: $mobileSmall) {
+            font-size: 12px;
+         }
     }
 
     &__mail {
@@ -854,6 +941,12 @@
         font-size: 16px;
         font-weight: 500;
         line-height: 1.5;
+        @media (max-width: $mobile) {
+            font-size: 14px;
+         }
+         @media (max-width: $mobileSmall) {
+            font-size: 12px;
+         }
     }
 }
 
@@ -861,7 +954,10 @@
     display: flex;
     justify-content: center;
     gap: 16px;
-    margin-top: 60px;
+    @media (max-width: $mobileSmall) {
+        flex-direction: column;
+        align-items: center;
+     }
     &__button {
         padding-right: 50px;
 
@@ -873,8 +969,11 @@
 .button--border-big {
     padding-right: 61px;
     margin-right: 25px;
+    @media (max-width: $mobile) {
+        margin-right: 0;
+     }
     span {
         padding-left: 53px;
     }
 }
-
+//====================================================================================================
