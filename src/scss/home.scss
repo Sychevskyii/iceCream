@@ -844,6 +844,9 @@
      }
 }
 .card-item {
+    &__address {
+        font-style: normal;
+    }
 
     &__location {
         text-align: left;
