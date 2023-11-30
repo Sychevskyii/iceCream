@@ -1,10 +1,37 @@
 <div id="popup" aria-hidden="true" class="popup">
-	<div class="popup__wrapper">
-		<div class="popup__content">
-			<button data-close type="button" class="popup__close">Закрити</button>
-			<div class="popup__text">
-				Text
-			</div>
-		</div>
-	</div>
+  <div class="popup__wrapper">
+    <div class="buy-modal">
+		<button data-close type="button" class="buy-modal__close">Закрити</button>
+        <h2 class="buy-modal__title">Buy now</h2>
+          <ul class="buy-modal__list">
+            <li class="buy-modal__item">
+              <article class="buy-modal__card card-modal">
+				<div class="card-modal__shadow">
+					<img src="@img/products/product1.jpg" alt="Ice-cream" class="card-modal__img" />
+					<p class="card-modal__label">ice cream</p>
+				</div>
+              </article>
+            </li>
+            <li class="buy-modal__item">
+              <article class="buy-modal__card card-modal">
+                <img src="@img/products/product2.jpg" alt="Ice-cream" class="card-modal__img" />
+				<p class="card-modal__label">ice coffee</p>
+              </article>
+            </li>
+            <li class="buy-modal__item">
+              <article class="buy-modal__card card-modal">
+                <img src="@img/products/product3.jpg" alt="Ice-cream" class="card-modal__img" />
+				<p class="card-modal__label">milkshake</p>
+              </article>
+            </li>
+          </ul>
+		<form action="" class="buy-modal__form form-buy">
+			<label for="" class="form-buy__group">
+				<input type="text" class="form-buy__name">
+				<input type="number" class="form-buy__tel">
+				<textarea name="" id="" cols="30" rows="10" class="form-buy__comment"></textarea>
+			</label>
+		</form>
+    </div>
+  </div>
 </div>
