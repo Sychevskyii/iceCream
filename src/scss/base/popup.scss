@@ -63,6 +63,13 @@ body::after {
 	border-radius: 20px;
 	padding: 32px 54px;
 	position: relative;
+	@media (max-width: $mobileSmall) {
+		padding-left: 42px;
+		padding-right: 42px;
+	}
+	@media (max-width: 320px) {
+		height: 991px;
+	}
 	.lock & {
 		visibility: visible;
 	}
@@ -82,10 +89,9 @@ body::after {
 			position: absolute;
 			height: 1px;
 			width: 100%;
-			top: 50%;
-			left: 50%;
-			transform: translate(-50% -50%);
 			background-color: $hover-dark-cl;
+			left: 0;
+			bottom: 50%;
 			transform: rotate(45deg);
 		}
 		&::after {
@@ -94,10 +100,9 @@ body::after {
 			position: absolute;
 			height: 1px;
 			width: 100%;
-			top: 50%;
-			left: 50%;
-			transform: translate(-50% -50%);
 			background-color: $hover-dark-cl;
+			left: 0;
+			bottom: 50%;
 			transform: rotate(-45deg);
 		}
 	}
@@ -117,6 +122,12 @@ body::after {
 		gap: 30px;
 		justify-content: center;
 		margin-bottom: 40px;
+		@media (max-width: $mobileSmall) {
+			gap: 15px;
+		}
+		@media (max-width: 320px) {
+			flex-direction: column;
+		}
 	}
 
 	&__item {
@@ -146,7 +157,7 @@ body::after {
 	}
 
 	&__form {
-		width: 368px;
+		width: 100%;
 		margin: 0 auto;
 	}
 }
@@ -195,9 +206,16 @@ body::after {
 		height: 42px;
 		width: 100%;
 		border-radius: 10px;
+		padding: 0 152px 0 16px;
 		border: 1px solid #84A178;
 		background: rgba(248, 210, 78, 0.10);
 		margin-bottom: 16px;
+		transition: box-shadow $time-anim $type-anim;
+		outline: none;
+		&:hover,
+		&:focus {
+			box-shadow: 0px 8px 30px 0px rgba(10, 136, 23, 0.25)
+		}
 	}
 
 	&__tel {
@@ -205,9 +223,16 @@ body::after {
 		height: 42px;
 		width: 100%;
 		border-radius: 10px;
+		padding: 0 152px 0 16px;
 		border: 1px solid #84A178;
 		background: rgba(248, 210, 78, 0.10);
 		margin-bottom: 16px;
+		transition: box-shadow $time-anim $type-anim;
+		outline: none;
+		&:hover,
+		&:focus {
+			box-shadow: 0px 8px 30px 0px rgba(10, 136, 23, 0.25)
+		}
 	}
 
 	&__comment {
@@ -215,10 +240,17 @@ body::after {
 		height: 84px;
 		width: 100%;
 		border-radius: 10px;
+		padding: 11px 16px 0 16px;
 		resize: none;
 		border: 1px solid #84A178;
 		background: rgba(248, 210, 78, 0.10);
 		margin-bottom: 32px;
+		transition: box-shadow $time-anim $type-anim;
+		outline: none;
+		&:hover,
+		&:focus {
+			box-shadow: 0px 8px 30px 0px rgba(10, 136, 23, 0.25)
+		}
 	}
 
 }
