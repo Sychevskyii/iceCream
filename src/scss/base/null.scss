@@ -4,13 +4,9 @@
 	border: 0px;
 }
 *,
-*::before,
-*::after {
+*:before,
+*:after {
 	box-sizing: border-box;
-}
-*::before,
-*::after {
-	display: inline-block;
 }
 :focus,
 :active {
@@ -50,7 +46,6 @@ button {
 	background-color: transparent;
 }
 a {
-	display: inline-block;
 	color: inherit;
 	text-decoration: none;
 }

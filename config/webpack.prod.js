@@ -102,23 +102,24 @@ const config = {
 					}
 				]
 			}, {
-				test: /\.(png|jpe?g|gif|svg)$/i,
-				loader: 'file-loader',
-				options: {
-					name: '[path][name].[ext]',
-				}
-			}, {
 				test: /\.(jsx)$/,
 				exclude: /node_modules/,
 				use: [
 					{
+						loader: 'string-replace-loader',
+						options: {
+							search: '@img',
+							replace: 'img',
+							flags: 'g'
+						}
+					}, {
 						loader: "babel-loader",
 						options: {
-							presets: ["@babel/preset-react"],
+							presets: ["@babel/preset-react"]
 						}
 					}
 				],
-			},
+			}
 		],
 	},
 	plugins: [
