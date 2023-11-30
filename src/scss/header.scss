@@ -266,8 +266,10 @@
 .icon-menu {
 	display: none;
 	transition: transform $time-anim $type-anim;
-	.lock & {
-		transform: translateX(630%);
+	@media (min-width: $mobileSmall) {
+		.lock & {
+			transform: translateX(630%);
+		}
 	}
 	@media (max-width: $mobile) {
 		display: block;
