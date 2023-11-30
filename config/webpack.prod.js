@@ -1,7 +1,9 @@
 import fs from 'fs';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import FileIncludeWebpackPlugin from 'file-include-webpack-plugin-replace';
-import HtmlWebpackPlugin from 'html-webpack-plugin';
 import CopyPlugin from "copy-webpack-plugin";
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import TerserPlugin from "terser-webpack-plugin";
 
 import * as path from 'path';
 
@@ -10,22 +12,22 @@ const builFolder = "dist";
 const rootFolder = path.basename(path.resolve());
 
 let pugPages = fs.readdirSync(srcFolder).filter(fileName => fileName.endsWith('.pug'))
-let htmlPages = []
+let htmlPages = [];
 
 if (!pugPages.length) {
 	htmlPages = [new FileIncludeWebpackPlugin({
 		source: srcFolder,
+		destination: '../',
 		htmlBeautifyOptions: {
 			"indent-with-tabs": true,
 			'indent_size': 3
 		},
 		replace: [
-			{ regex: '<link rel="stylesheet" href="css/style.min.css">', to: '' },
 			{ regex: '../img', to: 'img' },
-			{ regex: '@img', to: 'img' },
+			{ regex: '@img', to: 'img', },
 			{ regex: 'NEW_PROJECT_NAME', to: rootFolder }
 		],
-	})];
+	})]
 }
 
 const paths = {
@@ -33,51 +35,26 @@ const paths = {
 	build: path.resolve(builFolder)
 }
 const config = {
-	mode: "development",
-	devtool: 'inline-source-map',
-	optimization: {
-		minimize: false
+	mode: "production",
+	cache: {
+		type: 'filesystem'
 	},
-	entry: [
-		`${paths.src}/js/app.js`
-	],
+	optimization: {
+		minimizer: [new TerserPlugin({
+			extractComments: false,
+		})],
+	},
 	output: {
 		path: `${paths.build}`,
-		filename: 'js/app.min.js',
-		publicPath: '/'
-	},
-	devServer: {
-		historyApiFallback: true,
-		static: paths.build,
-		open: true,
-		compress: true,
-		port: 'auto',
-		hot: true,
-		host: 'localhost', // localhost
-
-		// Розкоментувати на слабкому ПК
-		// (в режимі розробника папка результатом (dist) буде створюватися на диску)
-		/*
-		devMiddleware: {
-			writeToDisk: true,
-		},
-		*/
-
-		watchFiles: [
-			`${paths.src}/**/*.html`,
-			`${paths.src}/**/*.pug`,
-			`${paths.src}/**/*.json`,
-			`${paths.src}/**/*.htm`,
-			`${paths.src}/img/**/*.*`
-		],
+		filename: 'app.min.js',
+		publicPath: '/',
 	},
 	module: {
 		rules: [
 			{
 				test: /\.(scss|css)$/,
-				exclude: `${paths.src}/fonts`,
 				use: [
-					'style-loader',
+					MiniCssExtractPlugin.loader,
 					{
 						loader: 'string-replace-loader',
 						options: {
@@ -88,24 +65,27 @@ const config = {
 					}, {
 						loader: 'css-loader',
 						options: {
-							sourceMap: true,
-							importLoaders: 1,
+							importLoaders: 0,
+							sourceMap: false,
 							modules: false,
 							url: {
 								filter: (url, resourcePath) => {
-									if (url.includes("img/") || url.includes("fonts/")) {
+									if (url.includes("img") || url.includes("fonts")) {
 										return false;
 									}
 									return true;
 								},
 							},
 						},
-					}, {
+					},
+					{
 						loader: 'sass-loader',
 						options: {
-							sourceMap: true,
+							sassOptions: {
+								outputStyle: "expanded",
+							},
 						}
-					}
+					},
 				],
 			}, {
 				test: /\.pug$/,
@@ -122,31 +102,23 @@ const config = {
 					}
 				]
 			}, {
+				test: /\.(png|jpe?g|gif|svg)$/i,
+				loader: 'file-loader',
+				options: {
+					name: '[path][name].[ext]',
+				}
+			}, {
 				test: /\.(jsx)$/,
 				exclude: /node_modules/,
 				use: [
 					{
-						loader: 'string-replace-loader',
-						options: {
-							search: '@img',
-							replace: '../../img',
-							flags: 'g'
-						}
-					}, {
 						loader: "babel-loader",
 						options: {
-							presets: ["@babel/preset-react"]
+							presets: ["@babel/preset-react"],
 						}
 					}
 				],
-			}, {
-				test: /\.(png|jpe?g|gif|svg)$/i,
-				use: [
-					{
-						loader: 'file-loader',
-					},
-				],
-			}
+			},
 		],
 	},
 	plugins: [
@@ -154,24 +126,25 @@ const config = {
 		...pugPages.map(pugPage => new HtmlWebpackPlugin({
 			minify: false,
 			template: `${srcFolder}/${pugPage}`,
-			filename: `${pugPage.replace(/\.pug/, '.html')}`
+			filename: `../${pugPage.replace(/\.pug/, '.html')}`
 		})),
+		new MiniCssExtractPlugin({
+			filename: '../css/style.css',
+		}),
 		new CopyPlugin({
 			patterns: [
 				{
-					from: `${srcFolder}/img`, to: `img`,
-					noErrorOnMissing: true,
-					force: true
+					from: `${paths.src}/files`, to: `../files`,
+					noErrorOnMissing: true
 				}, {
-					from: `${srcFolder}/files`, to: `files`,
-					noErrorOnMissing: true,
-					force: true
+					from: `${paths.src}/php`, to: `../`,
+					noErrorOnMissing: true
 				}, {
-					from: `${paths.src}/favicon.ico`, to: `./`,
+					from: `${paths.src}/favicon.ico`, to: `../`,
 					noErrorOnMissing: true
 				}
 			],
-		}),
+		})
 	],
 	resolve: {
 		alias: {
