@@ -53,18 +53,20 @@ const config = {
 		compress: true,
 		port: 'auto',
 		hot: true,
-		host: 'local-ip', // localhost
+		host: 'localhost', // localhost
 
 		// Розкоментувати на слабкому ПК
 		// (в режимі розробника папка результатом (dist) буде створюватися на диску)
-		
+		/*
 		devMiddleware: {
 			writeToDisk: true,
 		},
+		*/
 
 		watchFiles: [
 			`${paths.src}/**/*.html`,
 			`${paths.src}/**/*.pug`,
+			`${paths.src}/**/*.json`,
 			`${paths.src}/**/*.htm`,
 			`${paths.src}/img/**/*.*`
 		],
@@ -127,7 +129,7 @@ const config = {
 						loader: 'string-replace-loader',
 						options: {
 							search: '@img',
-							replace: 'img',
+							replace: '../../img',
 							flags: 'g'
 						}
 					}, {
@@ -136,6 +138,13 @@ const config = {
 							presets: ["@babel/preset-react"]
 						}
 					}
+				],
+			}, {
+				test: /\.(png|jpe?g|gif|svg)$/i,
+				use: [
+					{
+						loader: 'file-loader',
+					},
 				],
 			}
 		],

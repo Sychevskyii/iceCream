@@ -2,6 +2,9 @@
 // Для підключення/відключення стилів конкретного елемента форми дивись base/forms/forms.scss
 @import "base/forms/forms";
 
+// Стилі меню + бургер
+// @import "base/menu";
+
 // Стилі попапів
 // @import "base/popup";
 
@@ -49,7 +52,7 @@
 		object-fit: cover;
 	}
 }
-[class*="-ibg--contain"] {
+[class*="-ibg-contain"] {
 	img {
 		object-fit: contain;
 	}
