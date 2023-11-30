@@ -61,9 +61,47 @@ body::after {
 	height: 644px;
 	max-width: 100%;
 	border-radius: 20px;
+	padding: 32px 54px;
+	position: relative;
 	.lock & {
 		visibility: visible;
 	}
+
+	&__close {
+		position: absolute;
+		top: 12px;
+		right: 12px;
+		display: block;
+		margin-left: auto;
+		height: 20px;
+		width: 20px;
+		padding: 5px;
+		&::before {
+			content: '';
+			display: block;
+			position: absolute;
+			height: 1px;
+			width: 100%;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50% -50%);
+			background-color: $hover-dark-cl;
+			transform: rotate(45deg);
+		}
+		&::after {
+			content: '';
+			display: block;
+			position: absolute;
+			height: 1px;
+			width: 100%;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50% -50%);
+			background-color: $hover-dark-cl;
+			transform: rotate(-45deg);
+		}
+	}
+
 	&__title {
 		color: $hover-dark-cl;
 		text-align: center;
@@ -114,8 +152,7 @@ body::after {
 }
 .popup {
 
-	&__close {
-	}
+	
 }
 .card-modal {
 
@@ -183,4 +220,5 @@ body::after {
 		background: rgba(248, 210, 78, 0.10);
 		margin-bottom: 32px;
 	}
+
 }
