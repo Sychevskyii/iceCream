@@ -557,6 +557,14 @@
         @media (max-width: $mobileSmall) {
             margin: 0 auto;
         }
+
+        &:focus {
+            .made-block__icon-btn {
+				fill: #fff	;
+			}
+			color: #fff;
+			background-color: $hover-btn-cl;
+        }
     }
 }
 .made-block-count {
