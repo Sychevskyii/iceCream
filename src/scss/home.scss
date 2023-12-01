@@ -11,6 +11,9 @@
     background-position: center bottom;
     background-size: 1200px;
     padding-top: 80px;
+    .lock & {
+		padding-top: 80px;
+	}
     @include adaptiveValue("padding-bottom", 103, 0);
     @media (max-width: 769px) {
 		background-image: url(../img/hero/dots-bg-tb.png);
