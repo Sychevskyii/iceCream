@@ -105,6 +105,18 @@
 //====================================================================================================
 .header {
 	background-color: #84A178;
+	position: absolute;
+	width: 100%;
+	z-index: 50;
+	&._header-scroll {
+		position: fixed;
+		width: 100%;
+		top: -200%;
+	}
+	&._header-show {
+		transition: top 0.6s $type-anim;
+		top: 0;
+	}
 	&__container {
 		display: flex;
 		align-items: center;
@@ -139,6 +151,10 @@
 		@media (max-width: $mobile) {
 			flex-direction: column;
 			gap: 40px;
+			transform: translateX(-12%);
+		}
+		@media (max-width: $mobileSmall) {
+			transform: translateX(0);
 		}
 		@include adaptiveValue("padding-top", 32, 28);
 		@include adaptiveValue("padding-bottom", 13, 11);

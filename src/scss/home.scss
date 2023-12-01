@@ -10,12 +10,12 @@
     background-repeat: no-repeat;
     background-position: center bottom;
     background-size: 1200px;
-    padding-top: 40px;
+    padding-top: 80px;
     @include adaptiveValue("padding-bottom", 103, 0);
     @media (max-width: 769px) {
 		background-image: url(../img/hero/dots-bg-tb.png);
         background-size: 100%;
-        padding-top: 15px;
+        padding-top: 80px;
         padding-bottom: 24px;
 	}
     @media (max-width: 735px) {
