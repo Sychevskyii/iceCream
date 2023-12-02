@@ -1,0 +1,32 @@
+<header data-scroll="120" data-scroll-show="1000" class="header">
+  <div class="header__container">
+    <img class="header__logo" src="@img/icons/logo.png" alt="Logo" />
+    <div class="header__menu menu">
+      <button type="button" class="menu__icon icon-menu"><span></span></button>
+      <nav class="menu__body">
+        <ul class="menu__list">
+          <li class="menu__item"><a href="#" data-goto=".hero" class="menu__link">Home</a></li>
+          <li class="menu__item">
+            <a href="#" data-goto=".made" class="menu__link">How it’s made?</a>
+          </li>
+          <li class="menu__item">
+            <a href="#" data-goto=".products" class="menu__link">Our products</a>
+          </li>
+          <li class="menu__item"><a href="#" data-goto=".footer" class="menu__link">Contact</a></li>
+          <li class="menu__item"><button data-popup="#popup" type="button" class="button action-button">
+            <span>Buy now</span
+            ><svg class="button__icon" width="10" height="10">
+              <use href="@img/icons/sprite.svg#icon-arrow-right"></use>
+            </svg>
+          </button></li>
+        </ul>
+      </nav>
+    </div>
+    <button data-popup="#popup" type="button" class="button action-button action-button--hide">
+      <span>Buy now</span
+      ><svg class="button__icon" width="10" height="10">
+        <use href="@img/icons/sprite.svg#icon-arrow-right"></use>
+      </svg>
+    </button>
+  </div>
+</header>
