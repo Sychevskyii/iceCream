@@ -1,6 +1,7 @@
 .button {
 	display: flex;
 	justify-content: center;
+	align-items: center;
 	cursor: url(../img/icons/cursor.svg), pointer;
 	padding: 12px 51px 12px 0;
 	background-color: $accent-cl;
@@ -21,7 +22,7 @@
 
 	&__icon {
 		position: absolute;
-		top: 14px;
+		top: 34%;
 		right: 35px;
 		transition: fill $time-hover $type-anim;
 	}
@@ -105,16 +106,18 @@
 //====================================================================================================
 .header {
 	background-color: #84A178;
-	// z-index: 50;
-	// &._header-scroll {
-	// 	width: 100%;
-	// 	top: -200%;
-	// }
-	// &._header-show {
-	// 	transition: top 0.6s $type-anim;
-	// 	opacity: 0.8;
-	// 	top: 0;
-	// }
+	z-index: 50;
+	&._header-scroll {
+		position: fixed;
+		width: 100%;
+		top: -100%;
+	}
+	&._header-show {
+		transition: top 0.6s $type-anim;
+		opacity: 0.8;
+		top: 0;
+	}
+	
 	&__container {
 		display: flex;
 		align-items: center;
@@ -125,11 +128,13 @@
 	}
 
 	&__logo {
-		@media (min-width: $mobile) {
-			@include adaptiveValue("margin-right", 308, 0);
-		}
 		@media (max-width: $mobile) {
 			margin-right: auto;
+			width: 48px;
+		}
+		@media (max-width: 480px) {
+			margin-right: auto;
+			width: 40px;
 		}
 	}
 }
@@ -149,7 +154,6 @@
 		@media (max-width: $mobile) {
 			flex-direction: column;
 			gap: 40px;
-			transform: translateX(-12%);
 		}
 		@media (max-width: $mobileSmall) {
 			transform: translateX(0);
@@ -267,7 +271,7 @@
 	.menu__body {
 		position: fixed;
 		z-index: 50;
-		top: 65px;
+		top: 50px;
 		left: 0;
 		width: 100%;
 		height: 100%;

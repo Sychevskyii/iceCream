@@ -138,6 +138,12 @@ body {
 		@media (max-width: $tablet) {
 			max-width: toRem(750);
 		}
+		@if ($containerPadding>0 and $maxWidthContainer>0) {
+			padding: 0 toRem(math.div($containerPadding, 2));
+		} @else {
+			@include adaptiveValue("padding-left", math.div($containerPadding, 2), 32);
+			@include adaptiveValue("padding-right", math.div($containerPadding, 2), 32);
+		}
 		@media (max-width: $mobile) {
 			max-width: none;
 			@if ($containerPadding>0 and $maxWidthContainer>0) {

@@ -10,24 +10,28 @@
     background-repeat: no-repeat;
     background-position: center bottom;
     background-size: 1200px;
-    padding-top: 80px;
-    .lock & {
-		padding-top: 80px;
-	}
-    @include adaptiveValue("padding-bottom", 103, 0);
+    height: 586px;
+    padding-top: 40px;
+    // .lock & {
+	// 	padding-top: 80px;
+	// }
+    // @include adaptiveValue("padding-bottom", 103, 0);
     @media (max-width: 769px) {
 		background-image: url(../img/hero/dots-bg-tb.png);
         background-size: 100%;
-        padding-top: 80px;
-        padding-bottom: 24px;
+        height: 415px;
 	}
-    @media (max-width: 735px) {
+    @media (max-width: 421.98px) {
+        height: 502px;
+    }
+    @media (max-width: 600px) {
         background-image: url(../img/hero/dots-bg-mb.png);
         background-position: right bottom;
         background-size: 330px;
         }
     
     &__container {
+        height: 100%;
         position: relative;
     }
 }
@@ -85,6 +89,7 @@
         color: $accent-cl;
         text-decoration: underline;
         font-weight: 600;
+        z-index: 25;
         transition: color $time-anim $type-anim;
         &:hover {
             color: $hover-btn-cl;
@@ -131,24 +136,28 @@
 }
 .hero-info-block {
     width: 200px;
-    @include adaptiveValue("margin-top", 122, 60);
+    margin-top: 122px;
     @include adaptiveValue("margin-left", 242, 100);
     padding-left: 10px;
     @media (max-width: $mobileSmall) {
         display: none;
      }
+     @media (max-width: 569.98px) {
+        margin-left: 0;
+    }
     @media (max-width: $mobile) {
         width: 175px;
-        margin-left: 216px;
+        @include adaptiveValue("margin-right", 184, 0);
+        margin-top: 46px;
      }
-     @media (max-width: 735px) {
-        margin-left: 0;
-        }
     &__text {
         margin-bottom: 24px;
         color: #fff;
         font-weight: 400;
         line-height: 1.4;
+        @media (max-width: 677.98px) {
+            display: none;
+        }
         @media (max-width: $mobile) {
             font-size: 12px;
             margin-bottom: 29px;
@@ -160,6 +169,10 @@
             .hero-info-block__icon {
                 fill: $accent-cl;
             }
+        }
+
+        @media (max-width: 677.98px) {
+            display: none;
         }
     }
 
@@ -173,57 +186,55 @@
     }
 
     &__img--left {
-        bottom: -38px;
+        bottom: 65px;
         left: 16px;
-        @media (max-width: 735px) {
+        @media (max-width: 677.98px) {
             display: none;
-            }
-            @media (max-width: 769px) {
-                left: 10px;
-            }
+        }
             @media (max-width: 912.98px) {
-                bottom: -50px;
+                bottom: 0;
             }
         @media (max-width: $mobile) {
-            bottom: -10px;
-            @include adaptiveValue("width", 225, 152);
+                width: 152px;
             }
         @media (max-width: $tablet) {
-        bottom: -10px;
-        @include adaptiveValue("width", 225, 152);
+            left: 15px;
+            bottom: 12px;
         }
     }
 
     &__img--right {
-        bottom: -102px;
+        bottom: 0;
         right: 95px;
         @media (max-width: 912.98px) {
-            bottom: -70px;
+            bottom: 0;
             right: 50px;
         }
-        @media (max-width: 769px) {
-            bottom: -24px;
-            right: 59px;
-        }
         @media (max-width: $mobile) {
-            bottom: -24px;
+            bottom: 0;
             right: 31px;
         }
         @media (max-width: $mobileSmall) {
             bottom: -71px;
          } 
-         @media (max-width: 420px) {
-            display: none;
-         } 
+        //  @media (max-width: 420px) {
+        //     display: none;
+        //  } 
          
         @media (max-width: $tablet) {
-            @include adaptiveValue("width", 456, 268);
+            width: 268px;
+            bottom: 0;
+            right: 92px;
+            }
+            @media (max-width: 600px) {
+                width: 218px;
+                right: 20px;
             }
             
-            @media (max-width: 735px) {
-                right: 20px;
-                width: 218px;
-                }   
+            // @media (max-width: 735px) {
+            //     right: 20px;
+            //     width: 218px;
+            //     }   
     }
 }
 //====================================================================================================
@@ -310,7 +321,7 @@
      }
 
      @media (max-width: 370px) {
-        width: 300px;
+        width: 289px;
      }
     &--yellow {
         background-color: #EFD478;
@@ -556,11 +567,21 @@
     }
 
     &__btn {
-        padding-right: 34px;
+        padding-right: 51px;
         @media (max-width: $mobileSmall) {
             margin: 0 auto;
         }
 
+        span {
+            padding-left: 34px;
+        }
+
+        .made-block__icon-btn {
+            position: absolute;
+            top: 34%;
+            right: 35px;
+            transition: fill $time-hover $type-anim;
+        }
         &:focus {
             .made-block__icon-btn {
 				fill: #fff	;
