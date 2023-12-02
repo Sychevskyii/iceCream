@@ -12,24 +12,21 @@
     background-size: 1200px;
     height: 586px;
     padding-top: 40px;
-    // .lock & {
-	// 	padding-top: 80px;
-	// }
-    // @include adaptiveValue("padding-bottom", 103, 0);
-    @media (max-width: 769px) {
-		background-image: url(../img/hero/dots-bg-tb.png);
-        background-size: 100%;
-        height: 415px;
-	}
     @media (max-width: 421.98px) {
         height: 502px;
     }
-    @media (max-width: 600px) {
-        background-image: url(../img/hero/dots-bg-mb.png);
-        background-position: right bottom;
-        background-size: 330px;
+        @media (max-width: 768.98px) { 
+            height: 415px;
         }
-    
+        @media (max-width: 1056.98px) {
+            background-image: url(../img/hero/dots-bg-tb.png);
+            background-size: 100%;
+        }
+        @media (max-width: 600px) {
+            background-image: url(../img/hero/dots-bg-mb.png);
+            background-position: right bottom;
+            background-size: 330px;
+            }
     &__container {
         height: 100%;
         position: relative;
@@ -78,11 +75,16 @@
         align-items: center;
         gap: 34px;
 
-        @media (max-width: 380px) {
-            flex-direction: column;
-            align-items: start;
-            gap: 20px;
-         }
+        @media (max-width: 363.98px) {
+            gap: 12px;
+            
+        }
+
+        // @media (max-width: 380px) {
+        //     flex-direction: column;
+        //     align-items: start;
+        //     gap: 20px;
+        //  }
     }
 
     &__link {
@@ -99,7 +101,13 @@
         }
 
         @media (max-width: $mobile) {
-            font-size: 16px;
+            font-size: 12px;
+         }
+    }
+
+    .button {
+        @media (max-width: $mobile) {
+            font-size: 12px;
          }
     }
 }
@@ -108,6 +116,9 @@
     display: flex;
     flex-direction: column;
     align-items: end;
+    @media (max-width: $mobileSmall) {
+        display: none;
+     }
     &__number {
         color: #131313;
         font-size: 46px;
@@ -118,7 +129,7 @@
         @media (max-width: $mobile) {
             font-size: 28px;
             margin-bottom: 8px;
-         }
+         } 
     }
 
     &__name {
@@ -137,7 +148,7 @@
 .hero-info-block {
     width: 200px;
     margin-top: 122px;
-    @include adaptiveValue("margin-left", 242, 100);
+    @include adaptiveValue("margin-left", 242, 190);
     padding-left: 10px;
     @media (max-width: $mobileSmall) {
         display: none;
@@ -214,21 +225,23 @@
             bottom: 0;
             right: 31px;
         }
-        @media (max-width: $mobileSmall) {
-            bottom: -71px;
-         } 
-        //  @media (max-width: 420px) {
-        //     display: none;
-        //  } 
          
-        @media (max-width: $tablet) {
+        @media (max-width: 873.98px) {
             width: 268px;
             bottom: 0;
             right: 92px;
             }
-            @media (max-width: 600px) {
+            
+            @media (max-width: 599.98px) {
                 width: 218px;
                 right: 20px;
+                bottom: 0;
+            }
+
+            @media (max-width: 445.98px) {
+                width: 177px;
+                bottom: 0;
+                right: 60px;
             }
             
             // @media (max-width: 735px) {
