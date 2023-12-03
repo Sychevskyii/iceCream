@@ -1,0 +1,237 @@
+<!-- Модальне вікно Buy now -->
+<div id="popup" aria-hidden="true" class="popup">
+  <div class="popup__wrapper">
+    <div class="popup__content buy-modal modal">
+      <button
+        data-close
+        type="button"
+        class="buy-modal__close modal-close"
+      ></button>
+      <h2 class="buy-modal__title modal-title">Buy now</h2>
+      <ul class="buy-modal__list">
+        <li class="buy-modal__item">
+          <article class="buy-modal__card card-modal">
+            <img
+              src="@img/products/product1.jpg"
+              alt="Ice-cream"
+              class="card-modal__img"
+            />
+            <p class="card-modal__label">ice cream</p>
+          </article>
+        </li>
+        <li class="buy-modal__item">
+          <article class="buy-modal__card card-modal buy-modal__card--yellow">
+            <img
+              src="@img/products/product2.jpg"
+              alt="Ice-cream"
+              class="card-modal__img card-modal__img--yellow"
+            />
+            <p class="card-modal__label">ice coffee</p>
+          </article>
+        </li>
+        <li class="buy-modal__item">
+          <article class="buy-modal__card card-modal buy-modal__card--brown">
+            <img
+              src="@img/products/product3.jpg"
+              alt="Ice-cream"
+              class="card-modal__img card-modal__img--brown"
+            />
+            <p class="card-modal__label">milkshake</p>
+          </article>
+        </li>
+      </ul>
+      <form action="" class="buy-modal__form form">
+        <label for="" class="form__group">
+          <input type="text" class="form__name form-input" placeholder="Name" />
+          <input type="tel" class="form__tel form-input" placeholder="Phone" />
+          <textarea
+            name=""
+            id=""
+            cols="30"
+            rows="10"
+            class="form__comment"
+            placeholder="Comment"
+          ></textarea>
+          <button type="submit" class="button button--center">Submit</button>
+        </label>
+      </form>
+    </div>
+  </div>
+</div>
+<!-- Модальне вікно Products -->
+<div id="popup-products" aria-hidden="true" class="popup">
+  <div class="popup__wrapper">
+    <div class="popup__content products-modal modal">
+      <button
+        data-close
+        type="button"
+        class="products-modal__close modal-close"
+      ></button>
+      <h2 class="products-modal__title modal-title">Chololate icecream</h2>
+      <img
+        src="@img/products/modal_img.jpg"
+        alt="Ice-cream"
+        class="products-modal__img"
+      />
+      <ul class="products-modal__list list-compos">
+        <li class="list-compos__item">
+          <p class="list-compos__info">320</p>
+          <p class="list-compos__compos">kcal</p>
+        </li>
+        <li class="list-compos__item">
+          <p class="list-compos__info">4g</p>
+          <p class="list-compos__compos">Protein...</p>
+        </li>
+        <li class="list-compos__item">
+          <p class="list-compos__info">8,2g</p>
+          <p class="list-compos__compos">Fats</p>
+        </li>
+        <li class="list-compos__item">
+          <p class="list-compos__info">40,4g</p>
+          <p class="list-compos__compos">Carbs</p>
+        </li>
+      </ul>
+      <h3 class="list-label">Ingredients</h3>
+      <ul class="products-modal__list list-info">
+        <li class="list-info__item">
+          <p class="list-info__ing">Milk</p>
+          <p class="list-info__num">100ml</p>
+        </li>
+        <li class="list-info__item">
+          <p class="list-info__ing">Belgian chocolate</p>
+          <p class="list-info__num">20g</p>
+        </li>
+        <li class="list-info__item">
+          <p class="list-info__ing">Cream</p>
+          <p class="list-info__num">150 ml</p>
+        </li>
+        <li class="list-info__item">
+          <p class="list-info__ing">Cocoa powder</p>
+          <p class="list-info__num">30g</p>
+        </li>
+        <li class="list-info__item">
+          <p class="list-info__ing">Sugar</p>
+          <p class="list-info__num">40g</p>
+        </li>
+        <li class="list-info__item">
+          <p class="list-info__ing">Vanilla sugar</p>
+          <p class="list-info__num">10g</p>
+        </li>
+      </ul>
+      <form action="" class="products-modal__form form">
+        <label for="" class="form__group">
+          <input type="text" class="form__name form-input" placeholder="Name" />
+          <input type="tel" class="form__tel form-input" placeholder="Phone" />
+          <textarea
+            name=""
+            id=""
+            cols="30"
+            rows="10"
+            class="form__comment"
+            placeholder="Comment"
+          ></textarea>
+          <button type="submit" class="button button--center">Submit</button>
+        </label>
+      </form>
+    </div>
+  </div>
+</div>
+<!-- Модальне вікно How its made -->
+<div id="how-made" aria-hidden="true" class="popup">
+  <div class="popup__wrapper">
+    <div class="popup__content how-made modal">
+      <button
+        data-close
+        type="button"
+        class="how-made__close modal-close"
+      ></button>
+      <h2 class="how-made__title modal-title">How it’s made?</h2>
+      <iframe
+        class="how-made__video"
+        width="448"
+        height="205"
+        src="https://www.youtube.com/embed/DuDbvnM2KCE?si=EeyHVLAo8MvCQn2f"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen
+      ></iframe>
+      <p class="how-made__text">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et Lorem ipsum dolor sit amet, consectetur
+        adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+      </p>
+    </div>
+  </div>
+</div>
+<!-- Модальне вікно Our location -->
+<div id="location-modal" aria-hidden="true" class="popup">
+  <div class="popup__wrapper">
+    <div class="popup__content location-modal modal">
+      <button
+        data-close
+        type="button"
+        class="location-modal__close modal-close"
+      ></button>
+      <h2 class="location-modal__title modal-title">Our Locations</h2>
+      <iframe
+        class="location-modal__map"
+        src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d41372.25586513587!2d34.5425838!3d49.6021622!3m2!1i1024!2i768!4f13.1!5e0!3m2!1suk!2sua!4v1701420116978!5m2!1suk!2sua"
+        width="448"
+        height="260"
+        style="border: 0"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
+      <a
+        href="https://www.google.com/maps/@49.6021622,34.5425838,13z?hl=uk&entry=ttu"
+        target="_blank"
+        class="location-modal__open-map"
+        >Open map</a
+      >
+    </div>
+  </div>
+</div>
+<!-- Модальне вікно Franshise -->
+<div id="franshise-modal" aria-hidden="true" class="popup">
+  <div class="popup__wrapper">
+    <div class="popup__content franshise-modal modal">
+      <button
+        data-close
+        type="button"
+        class="franshise-modal__close modal-close"
+      ></button>
+      <h2 class="franshise-modal__title modal-title">
+        Thank you for your interest in owning an Ice Cream shop
+      </h2>
+      <p class="franshise-modal__text">
+        Due to the overwhelming volume of franchise requests we are not
+        accepting new franchisee applications at this time. Once the application
+        process resumes, we will contact you for further information. Please
+        fill out the contact information below and we will reach out for
+        additional information. We appreciate your patience.
+      </p>
+      <form action="" class="products-modal__form form">
+        <label for="" class="form__group">
+          <input type="text" class="form__name form-input" placeholder="Name" />
+          <input type="tel" class="form__tel form-input" placeholder="Phone" />
+          <input
+            type="email"
+            class="form__mail form-input"
+            placeholder="Email"
+          />
+          <textarea
+            name=""
+            id=""
+            cols="30"
+            rows="10"
+            class="form__comment"
+            placeholder="Comment"
+          ></textarea>
+          <button type="submit" class="button button--center">Submit</button>
+        </label>
+      </form>
+    </div>
+  </div>
+</div>

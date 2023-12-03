@@ -1,0 +1,341 @@
+.button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: url(../img/icons/cursor.svg), pointer;
+	padding: 12px 51px 12px 0;
+	background-color: $accent-cl;
+	font-size: 14px;
+	font-weight: 600;
+	border-radius: 10px;
+	position: relative;
+	transition: background-color $time-hover $type-anim;
+	outline: none;
+	span {
+		padding-left: 40px;
+	}
+
+	&--center {
+		padding: 12px 34px;
+		margin: 0 auto;
+	}
+
+	&__icon {
+		position: absolute;
+		top: 34%;
+		right: 35px;
+		transition: fill $time-hover $type-anim;
+	}
+	@media (any-hover: hover) {
+		&:hover {
+			background-color: $hover-btn-cl;
+		}
+		&:focus {
+			.button__icon {
+				fill: #fff	;
+			}
+			color: #fff;
+			background-color: $hover-btn-cl;
+		}
+		&:disabled {
+			background-color: $disabled-cl;
+		}
+	}
+	&--big {
+		padding: 12px 55px 12px 0;
+		span {
+			padding-left: 40px;
+		}
+	}
+	&--border-big {
+		padding: 12px 70px 12px 0;
+		background-color: transparent;
+		border: 2px solid $accent-cl;
+		transition: border $time-hover $type-anim;
+		.button__icon {
+			top: 13px;
+			right: 47px;
+		}
+		@media (any-hover: hover) {
+			&:hover {
+				background-color: transparent;
+				border: 2px solid $hover-btn-cl;
+			}
+			&:focus {
+				&__icon {
+					fill: #fff	;
+				}
+				background-color: transparent;
+				border: 2px solid $hover-btn-cl;
+			}
+			&:disabled {
+				background-color: $disabled-cl;
+			}
+		}
+	}
+	&--border-small {
+		padding: 12px 34px;
+		background-color: transparent;
+		border: 2px solid $accent-cl;
+		transition: border $time-hover $type-anim;
+
+		span {
+			padding: 0;
+		}
+		@media (any-hover: hover) {
+			&:hover {
+				background-color: transparent;
+				border: 2px solid $hover-btn-cl;
+			}
+			&:focus {
+				background-color: transparent;
+				border: 2px solid $hover-btn-cl;
+			}
+			&:disabled {
+				background-color: $disabled-cl;
+			}
+		}
+
+		@media (max-width: $mobile) {
+			padding: 11px 26px;
+			font-size: 16px;
+		 }
+	}
+}
+
+//====================================================================================================
+.header {
+	background-color: #84A178;
+	z-index: 50;
+	&._header-scroll {
+		position: fixed;
+		width: 100%;
+		top: -100%;
+	}
+	&._header-show {
+		transition: top 0.6s $type-anim;
+		opacity: 0.8;
+		top: 0;
+		@media (max-width: $mobileSmall) {
+			height: 50px;
+		}
+	}
+	
+	&__container {
+		display: flex;
+		align-items: center;
+		
+		@media (max-width: $mobile) {
+			justify-content: flex-end;
+		}
+	}
+
+	&__logo {
+		@media (max-width: $mobile) {
+			margin-right: auto;
+			width: 48px;
+		}
+		@media (max-width: 480px) {
+			margin-right: auto;
+			width: 40px;
+		}
+	}
+}
+.menu {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	width: 100%;
+	&__body {
+		display: flex;
+	}
+
+	&__list {
+		display: flex;
+		align-items: center;
+		width: 100%;
+		@media (max-width: $mobile) {
+			flex-direction: column;
+			gap: 40px;
+		}
+		@media (max-width: $mobileSmall) {
+			transform: translateX(0);
+		}
+		@include adaptiveValue("padding-top", 32, 28);
+		@include adaptiveValue("padding-bottom", 13, 11);
+	}
+
+	&__item {
+		@media (min-width: $mobile) {
+			@include adaptiveValue("margin-right", 28, 0);
+		}
+		&:nth-child(4) {
+			@media (min-width: 1068px) {
+				@include adaptiveValue("margin-right", 190, 0);
+			}
+		}
+		&:nth-child(5) {
+			margin-right: 0;
+			@media (max-width: $mobile) {
+				margin-top: 114px;
+			}
+		}
+	}
+	&__link {
+		color: #FCFCFC;
+		position: relative;
+		overflow: hidden;
+		text-wrap: nowrap;
+		font-size: 16px;
+		font-weight: 700;
+		transition: color $time-hover $type-anim;
+		@include adaptiveValue("padding-top", 32, 28);
+		@include adaptiveValue("padding-bottom", 13, 11);
+		@media (max-width: 767.98px) {
+			font-size: 48px;
+			&:hover {
+				color: $hover-dark-cl;
+			}
+			&:focus {
+				color: $hover-dark-cl;
+			}
+		}
+		@media (max-width: 479.98px) {
+			font-size: 34px;
+		}
+		@media (min-width: 768.98px) {
+			&::before {
+				content: '';
+				position: absolute;
+				bottom: 11px;
+				left: 0;
+				height: 1px;
+				width: 100%;
+				background-color: $accent-cl;
+				transform: scaleX(0);
+				opacity: 0;
+				visibility: hidden;
+				transition: transform $time-anim $type-anim, opacity $time-anim $type-anim, opacity $time-anim $type-anim;
+			}
+
+			&:hover {
+				color: $accent-cl;
+				&::before,
+				&::after {
+					transform: scaleX(1);
+					opacity: 1;
+					visibility: visible;
+				}
+			}
+			&:focus,
+			&:active,
+			&:hover {
+				color: $accent-cl;
+			}
+		}
+	}
+}
+.icon-menu {
+	margin-left: auto;
+}
+.action-button {
+	text-wrap: nowrap;
+	@media (max-width: 767px) {
+		display: block;
+	}
+	@media (max-width: $mobileSmall) {
+		display: block;
+	}
+	&--hide {
+		transition: transform $time-anim $type-anim;
+		.lock & {
+			transform: translateX(120%);
+		}
+		margin-left: 32px;
+		display: none;
+		@media (max-width: 768px) {
+			display: block;
+		}
+		@media (max-width: $mobileSmall) {
+			display: none;
+		}
+	}
+}
+
+//====================================================================================================
+
+//Burger
+@media (max-width: $mobile) {
+	.menu__body {
+		position: fixed;
+		z-index: 50;
+		top: 50px;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		transform: translateX(-100%);
+		background-color: #84A178;
+		overflow: auto;
+		transition: transform $time-anim $type-anim;
+	}
+}
+
+.icon-menu {
+	display: none;
+	transition: transform $time-anim $type-anim;
+	@media (min-width: $mobileSmall) {
+		.lock & {
+			transform: translateX(630%);
+		}
+	}
+	@media (max-width: $mobile) {
+		display: block;
+		position: relative;
+		width: toRem(30);
+		height: toRem(18);
+		z-index: 5;
+		@media (any-hover: none) {
+			cursor: default;
+		}
+		span,
+		&::before,
+		&::after {
+			content: "";
+			transition: all 0.3s ease 0s;
+			right: 0;
+			position: absolute;
+			width: 100%;
+			height: toRem(2);
+			background-color: #fff;
+		}
+		&::before {
+			top: 0;
+		}
+		&::after {
+			bottom: 0;
+		}
+		span {
+			top: calc(50% - toRem(1));
+		}
+		.menu-open & {
+			+.menu__body {
+				transform: translateX(0);
+			}
+			span {
+				width: 0;
+			}
+			&::before,
+			&::after {
+			}
+			&::before {
+				top: calc(50% - toRem(1));
+				transform: rotate(-45deg);
+			}
+			&::after {
+				bottom: calc(50% - toRem(1));
+				transform: rotate(45deg);
+			}
+		}	
+		
+	}
+}
