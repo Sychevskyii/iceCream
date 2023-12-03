@@ -308,9 +308,10 @@
 
 .cards-list {
     display: flex;
+    flex-wrap: wrap;
     gap: 30px;
-     @media (max-width: 762px) {
-        flex-wrap: wrap;
+     @media (max-width: 1199.98px) {
+        gap: 168px;
         justify-content: center;
         gap: 168px;
      }
@@ -324,7 +325,7 @@
 .card {
     position: relative;
     height: 546px;
-    width: 370px;
+    width: 369px;
     border-radius: 24px;
     text-align: center;
     background-color: #AEC6A5;
@@ -508,7 +509,7 @@
     @media (max-width: $tablet) {
         gap: 38px;
     }
-    @media (max-width: $mobileSmall) {
+    @media (max-width: 729.98px) {
         flex-direction: column;
         align-items: center;
     }
@@ -678,27 +679,7 @@
         }
     }
 }
-.section-img {
-    border-radius: 24px;
-    position: absolute;
-    bottom: -500px;
-    left: 93px;
-    @media (max-width: $mobile) {
-        width: 704px;
-        bottom: -350px;
-        left: 30px;
-    }
-    @media (max-width: $mobileSmall) {
-        width: 440px;
-        bottom: -220px;
-        left: 12px;
-    }
-    @media (max-width: 320px) {
-        width: 290px;
-        bottom: -150px;
-        left: 15px;
-    }
-}
+
 
 //====================================================================================================
 // Responses section
@@ -707,22 +688,19 @@
     background-image: url(../img/products/products-bg.png);
     background-position: center;
     background-size: 1200px;
-    padding-top: 452px;
+    // padding-top: 452px;
     padding-bottom: 228px;
     @media (max-width: $mobile) {
         background-image: url(../img/products/products-bg-tb.png);
         background-size: 768px;
-        padding-top: 283px;
         padding-bottom: 379px;
      }
      @media (max-width: $mobileSmall) {
         background-image: url(../img/products/products-bg-mb.png);
         background-size: 480px;
-        padding-top: 235px;
         padding-bottom: 409px;
      }
      @media (max-width: 320px) {
-        padding-top: 170px;
         padding-bottom: 350px;
      }
 }
@@ -748,11 +726,29 @@
         font-weight: 500;
         line-height: 1.8; 
         letter-spacing: 0.64px;
+        @media (max-width: 1010.98px) {
+            width: 800px;
+        }
+        @media (max-width: 972.98px) {
+            width: 720px;
+        }
         @media (max-width: $mobile) {
             width: 705px;
             padding: 28px 80px;
             font-size: 14px;
          }
+        @media (max-width: 740.98px) {
+            width: 650px;
+        }
+        @media (max-width: 690.98px) {
+            width: 550px;
+        }
+         @media (max-width: 592.98px) {
+            width: 450px;
+        }
+        @media (max-width: 488.98px) {
+            width: 350px;
+        }
          @media (max-width: $mobileSmall) {
             width: 85px;
             height: 85px;
@@ -794,12 +790,56 @@
 .swiper-pagination-bullet-active {
     background-color: #84A178;
 }
+
+.img-block {
+    display: flex;
+    justify-content: center;
+}
+
+.section-img {
+    border-radius: 24px;
+    width: 1013px;
+    margin-top: -93px;
+    margin-bottom: 140px;
+    text-align: center;
+    @media (max-width: 1034.98px) {
+        width: 900px;
+    }
+    @media (max-width: 924.98px) {
+        width: 800px;
+        margin-bottom: 100px;
+    }
+    @media (max-width: 829.98px) {
+        width: 750px;
+    }
+    @media (max-width: $mobile) {
+        width: 704px;
+    }
+    @media (max-width: 721.98px) {
+        width: 600px;
+      
+    }
+    @media (max-width: 621.98px) {
+        width: 500px;
+    }
+    @media (max-width: 514.98px) {
+        margin-top: -49px;
+        width: 440px;
+        margin-bottom: 80px;
+    }
+    @media (max-width: 457.98px) {
+        width: 320px;
+    }
+    @media (max-width: 319.98px) {
+        width: 290px;
+        margin-top: -32px;
+    }
+}
 //====================================================================================================
 // Location section
 //====================================================================================================
 .location {
     background-color: #84A178;
-    padding-top: 474px;
     padding-bottom: 120px;
     @media (max-width: $mobile) {
         padding-top: 278px;
@@ -812,18 +852,18 @@
      @media (max-width: 320px) {
         padding-bottom: 40px;
      }
-    &__container {
-        position: relative;
-    }
 }
 .card-list {
     display: flex;
     gap: 32px;
-    position: absolute;
-    left: 15px;
-    bottom: 128px;
+    margin-bottom: 60px;
     @media (max-width: $mobile) {
         bottom: 90px;
+     }
+     @media (max-width: 695.98px) {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 160px;
      }
      @media (max-width: $mobileSmall) {
         flex-direction: column;
@@ -867,7 +907,11 @@
 
     &--white {
         background-color: #fff;
-        padding: 40px; 
+        padding: 40px;  
+        margin-top: -100px;
+        @media (max-width: 888.98px) {
+            padding: 40px 20px;
+         } 
         @media (max-width: $mobile) {
             padding: 40px 24px;
             height: 537px;
